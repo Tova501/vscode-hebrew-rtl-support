@@ -1,0 +1,200 @@
+/* Hebrew RTL Support for VS Code
+   Supports mixed Hebrew and English text with proper bidirectional rendering */
+
+/* ==================== MAIN CHAT & MESSAGE AREAS ==================== */
+
+/* All chat containers and message areas */
+.inline-chat-content,
+.chat-widget,
+.chat-container,
+[class*="chat"],
+[role="article"],
+.markdown-body,
+.rendered-markdown {
+  direction: rtl;
+  unicode-bidi: embed;
+  text-align: right;
+}
+
+/* Text elements in chat */
+p {
+  direction: rtl;
+  unicode-bidi: embed;
+  text-align: right;
+}
+
+span {
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
+div {
+  direction: rtl;
+}
+
+/* ==================== MIXED TEXT HANDLING (Hebrew + English) ==================== */
+
+/* For proper bidirectional text mixing:
+   This allows Hebrew to be RTL and English to be LTR naturally */
+
+/* Isolate text spans so each language renders correctly */
+[dir="auto"],
+[lang="he"],
+[lang="he-IL"],
+.hebrew {
+  direction: auto;
+  unicode-bidi: embed;
+}
+
+/* If you want explicit RTL with auto-detection for mixed content */
+.message-content,
+.response-content,
+.chat-text {
+  direction: rtl;
+  unicode-bidi: embed;
+  text-align: right;
+}
+
+/* Code spans stay LTR */
+code,
+code span,
+.code,
+pre {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+
+/* ==================== EDITOR & CODE ==================== */
+
+.monaco-editor,
+.monaco-editor *,
+.editor-instance {
+  direction: ltr;
+  text-align: left;
+}
+
+.monaco-editor .view-line,
+.monaco-editor .line-content {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Hebrew comments in code */
+.token.comment,
+.comment,
+.mtk3,
+.mtk4 {
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
+/* Hebrew strings in code */
+.token.string,
+.string {
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
+/* ==================== UI ELEMENTS ==================== */
+
+/* Sidebar and navigation */
+.sidebar,
+.activity-bar,
+[class*="sidebar"],
+[class*="explorer"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Tabs */
+.tab,
+.tab-label,
+[class*="tab"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Status bar */
+.statusbar,
+.status-bar,
+[class*="status"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Menu and context menu */
+.context-menu,
+.menu,
+.dropdown,
+[role="menu"],
+[role="menuitemradio"],
+[role="menuitemcheckbox"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Breadcrumbs */
+.breadcrumb,
+.breadcrumb-item,
+[class*="breadcrumb"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Input fields */
+input,
+textarea,
+[contenteditable="true"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Buttons and interactive elements */
+button,
+.button,
+[role="button"],
+a,
+label {
+  direction: rtl;
+}
+
+/* Notifications */
+.notification,
+.alert,
+[class*="notification"],
+[class*="alert"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ==================== FONT SUPPORT (Optional) ==================== */
+
+/* Uncomment if you want better Hebrew font rendering */
+/* body,
+.monaco-workbench,
+.monaco-editor {
+  font-family: 'Segoe UI', 'Noto Sans Hebrew', 'Noto Sans', 'Arial', sans-serif;
+} */
+
+/* ==================== UTILITY CLASSES ==================== */
+
+/* Force RTL */
+.rtl,
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Force LTR */
+.ltr,
+[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+/* בא נראה אם הcss הזה עובד טוב ולא קופץ מצד לצד
+עושה רושם שyes
+and what if I start in english?
+האם it works?
+ */
