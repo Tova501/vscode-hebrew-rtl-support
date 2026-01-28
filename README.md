@@ -32,6 +32,15 @@ Custom CSS for VS Code to display Hebrew text in RTL (Right-to-Left) direction, 
 - If you need to reload: `Ctrl+Shift+P` → "Reload Custom CSS and JS"
 - Every time you update the CSS file, run this command
 
+## Removal Instructions
+
+To remove the Hebrew RTL CSS:
+
+1. Open Settings JSON: `Ctrl+Shift+P` → "Preferences: Open Settings (JSON)"
+2. Delete or comment out the CSS file URL from `vscode_custom_css.imports`
+3. Run command: `Ctrl+Shift+P` → "Reload Custom CSS and JS"
+4. VS Code will return to default text direction
+
 ## Features
 
 - ✅ RTL (Right-to-Left) text direction for Hebrew
