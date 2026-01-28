@@ -168,15 +168,6 @@ label {
   text-align: right;
 }
 
-/* ==================== FONT SUPPORT (Optional) ==================== */
-
-/* Uncomment if you want better Hebrew font rendering */
-/* body,
-.monaco-workbench,
-.monaco-editor {
-  font-family: 'Segoe UI', 'Noto Sans Hebrew', 'Noto Sans', 'Arial', sans-serif;
-} */
-
 /* ==================== UTILITY CLASSES ==================== */
 
 /* Force RTL */
