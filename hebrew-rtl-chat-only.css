@@ -1,0 +1,64 @@
+
+/* =========================================================
+   VS Code Chat ONLY – Hebrew RTL
+   Affects ONLY chat panels (Copilot / Claude / Chat)
+   Everything else stays LTR
+   ========================================================= */
+
+/* ---------- CHAT CONTAINER ---------- */
+.interactive-session,
+.chat-widget,
+.chat-editor,
+[class*="chat-view"],
+[class*="chat"] {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: plaintext;
+}
+
+/* ---------- CHAT CONTENT ---------- */
+.interactive-session *,
+.chat-widget *,
+.chat-editor *,
+[class*="chat-view"] * {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: plaintext;
+}
+
+/* ---------- CODE INSIDE CHAT (keep LTR) ---------- */
+.interactive-session pre,
+.interactive-session code,
+.chat-widget pre,
+.chat-widget code,
+.chat-editor pre,
+.chat-editor code {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+
+/* ---------- INPUT BOX (typing in chat) ---------- */
+.interactive-session textarea,
+.chat-widget textarea,
+.chat-editor textarea,
+.interactive-session [contenteditable="true"],
+.chat-widget [contenteditable="true"],
+.chat-editor [contenteditable="true"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ---------- SAFETY: FORCE NON-CHAT UI BACK TO LTR ---------- */
+.monaco-editor,
+.monaco-editor *,
+.explorer-viewlet,
+.panel,
+.terminal,
+.statusbar,
+.activity-bar {
+  direction: ltr !important;
+  text-align: left !important;
+}
+hebrew-rtl.css
+מציג את hebrew-rtl.css.
